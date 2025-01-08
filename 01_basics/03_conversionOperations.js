@@ -29,3 +29,28 @@ let stringToNumber = String(someNumber)
 console.log(typeof stringToNumber);
 console.log(stringToNumber);
 
+
+// **************************OPERATIONS*********************************
+
+let value = 3
+let negvalue = -value
+console.log(negvalue);
+
+console.log(2**3); /*Power*/
+
+// Prefix Postfix
+
+// Increment operator (++), agar aage lga toh baad m value bdhayenge output dene KeyboardEvent, aur pehle lga ho toh output incremented dikhayega
+
+let a = 3
+let b = ++a
+console.log(`a:${a},b:${b}`);
+
+let x = 3
+let y = x++
+console.log(`x:${x},y:${y}`);
+
+
+
+
+
