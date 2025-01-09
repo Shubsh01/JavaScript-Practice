@@ -6,6 +6,8 @@ let repocount = 50;
 console.log(`Hello! my name is ${name} and repocount is ${repocount}`);
 
 const newGame = new String('Contra')
+console.log(typeof newGame);
+
 console.log(newGame[3]);
 console.log(newGame.toUpperCase());
 console.log(newGame.__proto__); /*from this wew get the object */
