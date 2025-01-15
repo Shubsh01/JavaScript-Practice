@@ -52,12 +52,43 @@ const user_Data = [
 
 
 // Gives data in form of arrays 
-console.log(Object.keys(tinderUser));
-console.log(Object.values(tinderUser));
-console.log(Object.entries(tinderUser));
+// console.log(Object.keys(tinderUser));
+// console.log(Object.values(tinderUser));
+// console.log(Object.entries(tinderUser));
 
-console.log(tinderUser.hasOwnProperty('lastLoggedIn')); /*to check wether the property exist in the object or not */
+// console.log(tinderUser.hasOwnProperty('lastLoggedIn')); 
+/*to check wether the property exist in the object or not */
 
 
+// ()()()()()() Destructuring of an object ()()()()()()
 
+const randomObject = {
+    name:"SHUBHANG",
+    age: 18,
+    email: "shubhang@google.com"
+}
 
+// Post the below process I do not have to write console.log(randomObject.email); everytime, I can just console.log(e); to get the email, this is called Destructuring of an object 
+
+// Destructuring of an object is also used in react 
+
+const {email: e} = randomObject
+console.log(e);
+
+// JSON (JavaScript Object Notation) syntax/format  <<<<<<<APIS>>>>>>
+
+// It is written like an object but has no name and we use "" in both keys and values 
+
+// {
+//     "name": "Shubhang",
+//     "isLoggedIn": false,
+//     "age" : 18,
+//     "fullName": "Shubhang Sharma"
+// }
+
+// We can also get APIS in the format of arrays 
+[
+    {},
+    {},
+    {}
+]
