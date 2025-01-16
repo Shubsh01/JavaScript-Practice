@@ -33,3 +33,45 @@ function loggedIn(username = "Shubhang") /*If I define username as Shubhang here
 }
 loggedIn()
 loggedIn('Shubsh01')
+
+
+// <<<<<<<<<<<<<<<<<<<Rest Operator>>>>>>>>>>>>>>>>>>>>>
+// to add multiple values in a function 
+
+function calculateCartPrice(...num1){
+    return num1
+}
+
+console.log(calculateCartPrice(200,500,600,150, '700'));
+
+
+// We can also pass object in functions
+
+const user = {
+    username: "Shubhang",
+    email: "shubhang@google.com"
+}
+
+function handleObjects(anyObject){
+    console.log(`Username of user is ${anyObject.username}, and the email is ${anyObject.email}`);
+}
+
+handleObjects(user)
+
+// We can also directly pass the Object here 
+handleObjects({
+    username: "Shreesh",
+    email: "Shreesh@google.com"
+})
+
+
+// We can also pass Array in a function 
+
+const randomArray = [200,400,600,700]
+
+function handleArray(anyArray){
+   return console.log(`This function print second number of an array, which is ${anyArray[1]}`);  
+}
+
+handleArray(randomArray)
+handleArray([1,2,3,4]) /*We can also directly pass the array here*/
