@@ -47,3 +47,26 @@ const objArr = [
 objArr.forEach((item)=>{
     console.log(item.extesion);
 })
+
+// forEach LOOP DOES NOT RETURN ANYTHING FOR THAT WE NEED TO CREATE A NEW ARRAY TO RETURN IT
+
+const randomArr = [1,2,3,4,5,6,7,8,9,10]
+
+const randomValue = randomArr.forEach((items)=>{
+    console.log(items);
+    return items
+})
+
+console.log(randomValue);
+
+
+// EMPTY ARRAY METHOD 
+const emptyArr = []
+
+randomArr.forEach((num)=>{
+    if(num>4){
+        emptyArr.push(num)
+    }
+})
+
+console.log("this is the empty array" , emptyArr);
