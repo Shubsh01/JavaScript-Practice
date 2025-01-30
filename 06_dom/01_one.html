@@ -11,11 +11,28 @@
     </style>
 </head>
 <body class="bg-color">
-    <h1 id = "title" class="heading">DOM practice</h1>
+    <h1 id = "title" class="heading">DOM practice <span style="display: none;">test text</span></h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, iure delectus ipsam esse, ex dolore beatae aperiam nobis repellat suscipit excepturi, aut voluptas dolorum quam eveniet! Debitis quibusdam nulla reprehenderit.</p>
+
+    <h2>Lorem ipsum dolor sit.</h2>
+    <h2>Lorem ipsum dolor sit.</h2>
+    <h2>Lorem ipsum dolor sit.</h2>
+    <h2>Lorem ipsum dolor sit.</h2>
+
+    <input type="search">
+
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+    
 </body>
 </html>
 
+
+<!-- QUERY SELECTOR-ALL RETURN NODELIST, WHICH LOOKS LIKE AN ARRAY BUT IS NOT
+ IT DOES HAVE FOR-EACH LOOP BUT NOT MAP OR FILTER SO IT CAN NOT BE CONSIDERED AS AN ARRAY -->
 
 <!-- document.getElementById('title')
 <h1 id=​"title" class=​"heading">​DOM practice​</h1>​
@@ -33,3 +50,34 @@ document.getElementById('title').getAttribute('class')
 'heading'
 
 document.getElementById('title').setAttribute('class','test') -->
+
+
+
+<!-- {{{{{{Difference Between innerText, innerHTML and textContent}}}}}} -->
+
+<!-- title.textContent
+'DOM practice test text'
+
+title.innerHTML
+'DOM practice <span style="display: none;">test text</span>'
+
+title.innerText
+'DOM practice' -->
+
+
+
+<!-- {{{{{{{{{{{{{{{{{{{{{{{{QUERY SELECTORS}}}}}}}}}}}}}}}}}}}}}}}} 
+ 
+document.querySelector('h2')
+<h2>​Lorem ipsum dolor sit.​</h2>​
+
+document.querySelector('#title')
+<h1 id=​"title" class=​"heading">​…​</h1>​
+
+document.querySelector('.heading')
+<h1 id=​"title" class=​"heading">​…​</h1>​
+
+document.querySelector('input[type:password]')
+<input type="search">
+-->
+
