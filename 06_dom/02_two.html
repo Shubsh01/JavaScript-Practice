@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: black; color: white;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parentVals = document.querySelector('.parent')
+    // console.log(parentVals);
+    console.log(parentVals.children[1].innerHTML);
+    /*this is a HTML collection*/
+    for(let i =0; i<parentVals.children.length;i++){
+        console.log(parentVals.children[i].innerHTML);
+    }
+    parentVals.children[1].style.backgroundColor="yellow"
+    // CHANGING HTML COLLECTION/NODELIST IN AN ARRAY 
+    const nodeToArray = Array.from(parentVals.children)
+    nodeToArray.forEach(function(i){
+        // i.style.backgroundColor = "orange";
+        // i.style[-webkit-text-stroke]= "0.5px black"
+        i.style.color = "red"
+    })
+
+    console.log(nodeToArray);
+    
+    // IMPORTANT PROPERTIES OF PARENT 
+    console.log(parentVals.firstElementChild);
+    console.log(parentVals.lastElementChild);
+    
+    
+    
+</script>
+</html>
