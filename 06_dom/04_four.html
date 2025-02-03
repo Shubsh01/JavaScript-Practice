@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgba(0, 0, 0, 0.920); color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    // NOT AN OPTIMIZED FUNCTION BECAUSE WHEN WE USE 'innerHTML' 
+    // Performance: Replacing content with innerHTML causes the browser to re-parse the entire inner content, potentially making it slower for large or frequent updates.
+
+    // Security Risks: Directly setting innerHTML with user-generated content can expose your site to Cross-Site Scripting (XSS) vulnerabilities:
+
+    function addLanguage(newLang){
+    const li = document.createElement('li')
+    li.innerHTML = `${newLang}`
+    // document.querySelector('ul').appendChild(li)
+    document.querySelector('.language').appendChild(li)
+    }
+    addLanguage('Java')
+    addLanguage('C++')
+
+
+    // THIS IS THE 'OPTIMIZED FUNCTION' AS WE DONT'T HAVE TO ITERATE THE WHOLE HTML 
+    function optimizedFunction(lang){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(lang))
+        document.querySelector('.language').appendChild(li)
+    }
+    optimizedFunction('Python')
+    optimizedFunction('Ruby')
+
+
+    // EDIT 
+    const fourthLang = document.querySelector("li:nth-child(4)")
+    // fourthLang.innerHTML = "Rust" NOT OPTIMIZED
+    const newli = document.createElement('li')
+    newli.textContent="Rust"
+    fourthLang.replaceWith(newli)
+
+    //EDIT USING OUTERHTML
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>TypeScript</li>'
+
+    // REMOVE 
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+</script>
+</html>

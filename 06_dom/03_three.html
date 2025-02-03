@@ -5,21 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>three DOM</title>
 </head>
-<body style="background-color: rgb(35, 1, 35);">
+<body style="background-color: rgb(0, 0, 0);">
 </body>
 <script>
+    function create(){
     const div = document.createElement('div')
     console.log(div);
     div.className = 'main'
     // div.id = 'myId'
     div.id = Math.round(Math.random()*10+1)
     div.setAttribute('title','generaterTitle')
-    div.style.backgroundColor="Red"
+    div.style.backgroundColor="Gray"
     div.style.color = "White"
     div.innerText = "Shubhang"
     div.style.padding = "12px"
+    div.style.margin = "10px"
+    div.style.border = "1px solid black"
     document.body.appendChild(div)
     const text = document.createTextNode(" bhai kitna bacha h")
     div.appendChild(text)
+    }
+    for(let i =0; i<=3;i++){
+        create()
+    }
+    create()
+    // create()
 </script>
 </html>
