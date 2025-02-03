@@ -21,20 +21,31 @@
     for(let i =0; i<parentVals.children.length;i++){
         console.log(parentVals.children[i].innerHTML);
     }
-    parentVals.children[1].style.backgroundColor="yellow"
+    parentVals.children[2].style.backgroundColor="lightblue"
     // CHANGING HTML COLLECTION/NODELIST IN AN ARRAY 
     const nodeToArray = Array.from(parentVals.children)
     nodeToArray.forEach(function(i){
         // i.style.backgroundColor = "orange";
         // i.style[-webkit-text-stroke]= "0.5px black"
-        i.style.color = "red"
+        i.style.color = "pink"
     })
 
     console.log(nodeToArray);
     
     // IMPORTANT PROPERTIES OF PARENT 
-    console.log(parentVals.firstElementChild);
-    console.log(parentVals.lastElementChild);
+    // console.log(parentVals.firstElementChild.innerHTML);
+    // console.log(parentVals.lastElementChild.innerHTML);
+    
+    // QUERY SELECTOR IS AN EXPENSIVE OPERATION, DUE TO WHICH WE SHOULD NOT CALL IT IF NOT REQUIRED
+
+
+    // CHILD TO PARENT 
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne);
+    console.log(dayOne.parentElement);
+    console.log(dayOne.nextElementSibling);
+    console.log(dayOne.nextElementSibling.nextElementSibling);
+    
     
     
     
