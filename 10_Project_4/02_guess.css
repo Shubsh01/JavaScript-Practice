@@ -30,7 +30,7 @@ body{
     justify-content: center;
     align-items: center; */
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 20px;  
 }
 .guessSubmit{
     margin-top: 20px;
@@ -49,5 +49,7 @@ form{
     background-color: black;
     color: white;
     border: 1px solid white;
-    box-shadow: 3px 0px 0px rgb(255, 255, 255);
+    /* box-shadow: 3px 0px 0px rgb(255, 255, 255); */
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+
 }
