@@ -1,4 +1,4 @@
- const randomNumber = (Math.random()*100+1).toFixed(0);
+let randomNumber = (Math.random()*100+1).toFixed(0);
 // console.log(parseInt(Math.random()*100+1));
 console.log(randomNumber);
 const submitButton = document.querySelector('#subt')
@@ -46,9 +46,9 @@ function validateGuess(guess){
 
 function checkGusses(guess){
     if(guess>randomNumber){
-        displayMessage('The gussed number is higher')
+        displayMessage('The gussed number is too high, guess lower')
     }else if(guess<randomNumber){
-        displayMessage('The gussed number is lower')
+        displayMessage('The gussed number is too low, guess higher')
     }else{
         displayMessage('You guessed the correct number !!')
         endGame()
@@ -65,5 +65,28 @@ function displayGusses(guess){
 
 function displayMessage(message){
     lowOrHigh.innerHTML = `<h2>${message}</h2>`
+}
+
+function endGame(){
+    userInput.textContent = '' /*game over ho gya h*/
+    userInput.setAttribute('disabled','')
+    p.classList.add('button')
+    p.innerHTML = `<h2 id= "newGame" class = "playAgainButton">Play again</h2>`
+    startOver.appendChild(p)
+    playGame = false
+    newGame()
+}
+
+function newGame(){
+    const newButton = document.querySelector('#newGame')
+    newButton.addEventListener('click',function(e){
+        randomNumber = parseInt(Math.random()*100+1)
+        userInput.removeAttribute('disabled') 
+        numGuess = 1
+        remaining.textContent = `${11-numGuess}`
+        guessSlot.innerHTML = ''
+        startOver.removeChild(p)
+        playGame = true
+    })
 }
 
