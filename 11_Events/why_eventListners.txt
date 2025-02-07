@@ -1,0 +1,62 @@
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // }
+    // THE ABOVE CODE IS NOT SCALABLE, FLEXIBLE AND MAINTABLE AS 
+
+### **1. Multiple Event Handlers Supported**
+With `addEventListener()`, you can attach multiple event listeners to the same element, while `onclick` only allows one handler.
+
+#### Example:
+```javascript
+const owl = document.getElementById('owl');
+
+// First event listener
+owl.addEventListener('click', () => {
+    console.log('First handler');
+});
+
+// Second event listener (won't overwrite the first)
+owl.addEventListener('click', () => {
+    console.log('Second handler');
+});
+```
+
+**Using `onclick`:**
+```javascript
+// Only one event handler will work
+owl.onclick = () => console.log('Handler 1');
+owl.onclick = () => console.log('Handler 2'); // Overwrites Handler 1
+```
+
+---
+
+### **2. Advanced Event Options**
+You can specify options such as:
+- **`once: true`** — Execute the handler only once.
+- **`capture: true`** — Handle events during the capture phase.
+- **`passive: true`** — Improve scrolling performance by indicating the handler won't call `preventDefault()`.
+
+#### Example:
+```javascript
+owl.addEventListener('click', () => {
+    console.log('This will run only once!');
+}, { once: true });
+```
+
+---
+
+### **3. Better Maintainability**
+Since `addEventListener()` keeps your code clean and structured, you can attach and remove event handlers dynamically:
+
+#### Example:
+```javascript
+function owlHandler() {
+    alert('Owl clicked!');
+    owl.removeEventListener('click', owlHandler); // Clean up
+}
+
+owl.addEventListener('click', owlHandler);
+```
+
+This makes your code modular, easier to extend, and better suited for real-world applications. 
+
