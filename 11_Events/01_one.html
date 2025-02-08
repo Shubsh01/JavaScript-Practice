@@ -35,18 +35,29 @@
     },false)
     
     document.getElementById('owl').addEventListener('click',function(e){
-        console.log('Owl clicked ')
+        // console.log('Owl clicked ')
     },false) 
 
         // IN THE BELOW SCENARIO {{{TRUE}}} CAPTURING WILL HAPPEN(TOP TO BOTTOM) AS FIRST THE CONTENT OF ul WILL BE PRINTED, THEN THE CONTENT OF li WILL BE PRINTED
 
         document.getElementById('images').addEventListener('click',function(e){
-        console.log('image clicked')
+        // console.log('image clicked')
     },true)
     
     document.getElementById('river').addEventListener('click',function(e){
         e.stopPropagation()
-        console.log('River clicked ')
+        // console.log('River clicked ')
     },true)   
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.parentNode.parentNode);
+        const toBeRemoved = e.target.parentNode
+        console.log(e.target.tagName);
+        console.log(e.target.id);
+        
+    
+        // toBeRemoved.remove()
+        // toBeRemoved.parentNode.removeChild(toBeRemoved)
+    })
 </script>
 </html>
