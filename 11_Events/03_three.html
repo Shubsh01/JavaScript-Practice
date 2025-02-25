@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript Practice</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const startButton = document.getElementById('start')
+    const stopButton = document.getElementById('stop')
+
+    let intervalId
+
+    startButton.addEventListener('click',()=>{
+        if(intervalId==null){
+            console.log("Started");
+            intervalId = setInterval(()=>{
+                console.log(Date.now());
+            },2000)
+        }
+    })
+
+    stopButton.addEventListener('click',()=>{
+        clearInterval(intervalId)
+        intervalId = null
+        console.log("Stopped");
+    })
+
+
+
+    /*It also passes a parameter (hi)*/
+  </script>
+</html>
