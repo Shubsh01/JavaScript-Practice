@@ -11,23 +11,40 @@
     <button id="stop">Stop</button>
   </body>
   <script>
-    
     // generate a random color
 
-    const rC =  function() {
+    let rC = function () {
       let color = "#";
       let random = "0123456789ABCDEF";
-      for (let i = 0; i <= 6; i++) {
+      for (let i = 0; i < 6; i++) {
         color += random[Math.floor(Math.random() * 16)];
       }
       return color;
     };
+   
+    // functions
+    let intervalId;
+    const startChangingColor = function () {
+      if (intervalId == null) {
+        intervalId = setInterval(changeBGC, 1000);
+      }
 
-// Button id 
-    const stopButton = document.getElementById("stop");
-    const startButton = document.getElementById("start");
+      function changeBGC() {
+        document.body.style.backgroundColor = rC();
+      }
+    };
 
+    const stopChangingColor = function () {
+      clearInterval(intervalId);
+      intervalId = null;
+    };
 
-    startButton.addEventListener("click", () => {});
+    // Button id
+    document
+      .getElementById("stop")
+      .addEventListener('click', stopChangingColor);
+    document
+      .getElementById("start")
+      .addEventListener('click', startChangingColor);
   </script>
 </html>
